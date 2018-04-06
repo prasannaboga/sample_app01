@@ -14,8 +14,6 @@ export class HomePage {
 
   goToSamplePage01() {
     console.log('Clicked Go To Sample Page 01');
-    console.log('a')
-    this.navCtrl.setRoot(SamplePage01Page);
     this.navCtrl.push(SamplePage01Page)
   }
 

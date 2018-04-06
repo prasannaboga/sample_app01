@@ -1,0 +1,112 @@
+<!--
+  Generated template for the SampleComponets01Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SampleComponets01</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <button ion-button (click)="presentActionSheet()">Action Sheets</button>
+      <button ion-button (click)="setActionSheetTitle()">Set Action Sheet Title</button>
+      <ion-badge>Something</ion-badge>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="basicAlert()">Basic Alert</button>
+      <button ion-button (click)="advancedAlert()">Advanced Alert</button>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="presentActionSheet()">Action Sheets</button>
+      <ion-badge item-end>260k</ion-badge>
+    </ion-item>
+    <ion-item>
+      <button ion-button color="light">Light</button>
+      <button ion-button>Default</button>
+      <button ion-button color="secondary">Secondary</button>
+      <button ion-button color="danger">Danger</button>
+      <button ion-button color="dark">Dark</button>
+    </ion-item>
+    <ion-item>
+      <button ion-button color="light" outline>Light Outline</button>
+      <button ion-button outline>Primary Outline</button>
+      <button ion-button color="secondary" outline>Secondary Outline</button>
+      <button ion-button color="danger" outline>Danger Outline</button>
+      <button ion-button color="dark" outline>Dark Outline</button>
+    </ion-item>
+    <ion-item>
+      <button ion-button color="light" clear>Light Clear</button>
+      <button ion-button clear>Primary Clear</button>
+      <button ion-button color="secondary" clear>Secondary Clear</button>
+      <button ion-button color="danger" clear>Danger Clear</button>
+      <button ion-button color="dark" clear>Dark Clear</button>
+    </ion-item>
+    <ion-item>
+      <!-- Float the icon left -->
+      <button ion-button icon-left small>
+        <ion-icon name="home"></ion-icon>
+        Left Icon
+      </button>
+
+      <!-- Float the icon right -->
+      <button ion-button icon-right>
+        Right Icon
+        <ion-icon name="home"></ion-icon>
+      </button>
+
+      <!-- Only icon (no text) -->
+      <button ion-button icon-only large>
+        <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item-divider></ion-item-divider>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          Explore Nearby
+        </ion-card-header>
+
+        <ion-list>
+          <button ion-item>
+            <ion-icon name="cart" item-start></ion-icon>
+            Shopping
+          </button>
+
+          <button ion-item>
+            <ion-icon name="medical" item-start></ion-icon>
+            Hospital
+          </button>
+
+          <button ion-item>
+            <ion-icon name="cafe" item-start></ion-icon>
+            Cafe
+          </button>
+
+          <button ion-item>
+            <ion-icon name="paw" item-start></ion-icon>
+            Dog Park
+          </button>
+
+          <button ion-item>
+            <ion-icon name="beer" item-start></ion-icon>
+            Pub
+          </button>
+
+          <button ion-item>
+            <ion-icon name="planet" item-start></ion-icon>
+            Space
+          </button>
+
+        </ion-list>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
