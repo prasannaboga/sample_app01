@@ -8,7 +8,7 @@
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
-    "ionic:build": "ionic-app-scripts build",
+    "ionic:build": "ionic-app-scripts build --dev",
     "ionic:serve": "ionic-app-scripts serve"
   },
   "dependencies": {
@@ -41,6 +41,7 @@
     "emulator": "0.1.0",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "run": "1.4.0",
     "rxjs": "5.5.8",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.20"
@@ -63,8 +64,8 @@
     },
     "platforms": [
       "browser",
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }

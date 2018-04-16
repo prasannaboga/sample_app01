@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {SQLite, SQLiteObject} from '@ionic-native/sqlite'
+import {ExpenseNewDataPage} from "../expense-new-data/expense-new-data";
+import {ExpenseEditDataPage} from "../expense-edit-data/expense-edit-data";
 
 /**
  * Generated class for the Sample02Page page.
@@ -26,7 +28,7 @@ export class Sample02Page {
   }
 
   ionViewDidLoad() {
-    console.log('ans');
+    console.log('-- ionViewDidLoad');
     this.getData();
   }
 
@@ -35,13 +37,37 @@ export class Sample02Page {
     //this.getData();
   }
 
+  addData() {
+    console.log('aasd');
+    this.navCtrl.push(ExpenseNewDataPage);
+  }
+
+  editData(rowid) {
+    this.navCtrl.push(ExpenseEditDataPage, {
+      rowid: rowid
+    });
+  }
+
+  deleteData(rowid) {
+    this.sqlite.create({
+      name: 'sample_app01.db',
+      location: 'default'
+    }).then((db: SQLiteObject) => {
+      db.executeSql('DELETE FROM expense WHERE rowid=?', [rowid])
+        .then(res => {
+          console.log(res);
+          this.getData();
+        })
+        .catch(e => console.log(e));
+    }).catch(e => console.log(e));
+  }
+
   getData() {
     console.log('getData');
     this.sqlite.create({
       name: 'sample_app01.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
-      console.log('inside...')
       // create database
       db
         .executeSql('CREATE TABLE IF NOT EXISTS expense(rowid INTEGER PRIMARY KEY, date TEXT, type TEXT, description TEXT, amount INT)', {})
