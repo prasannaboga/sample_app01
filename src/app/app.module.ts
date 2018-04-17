@@ -14,6 +14,7 @@ import {SampleComponets01Page} from "../pages/sample-componets01/sample-componet
 import {Sample02Page} from "../pages/sample02/sample02";
 import {ExpenseNewDataPage} from "../pages/expense-new-data/expense-new-data";
 import {ExpenseEditDataPage} from "../pages/expense-edit-data/expense-edit-data";
+import {EnvironmentVariablesPage} from "../pages/environment-variables/environment-variables";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {ExpenseEditDataPage} from "../pages/expense-edit-data/expense-edit-data"
     SampleComponets01Page,
     Sample02Page,
     ExpenseNewDataPage,
-    ExpenseEditDataPage
+    ExpenseEditDataPage,
+    EnvironmentVariablesPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import {ExpenseEditDataPage} from "../pages/expense-edit-data/expense-edit-data"
     SampleComponets01Page,
     Sample02Page,
     ExpenseNewDataPage,
-    ExpenseEditDataPage
+    ExpenseEditDataPage,
+    EnvironmentVariablesPage
   ],
   providers: [
     StatusBar,

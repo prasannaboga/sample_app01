@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
 import {SamplePage01Page} from "../sample-page01/sample-page01";
 import {Sample02Page} from "../sample02/sample02";
 import {SampleComponets01Page} from "../sample-componets01/sample-componets01";
+import {ENV} from '@app/env';
+import {EnvironmentVariablesPage} from "../environment-variables/environment-variables";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  env = ENV;
 
   constructor(public navCtrl: NavController) {
 
@@ -25,6 +28,10 @@ export class HomePage {
 
   goToSampleComponets01Page() {
     this.navCtrl.push(SampleComponets01Page)
+  }
+
+  goToEnvironmentVariablesPage() {
+    this.navCtrl.push(EnvironmentVariablesPage)
   }
 
 }
