@@ -5,6 +5,7 @@ import {Sample02Page} from "../sample02/sample02";
 import {SampleComponets01Page} from "../sample-componets01/sample-componets01";
 import {ENV} from '@app/env';
 import {EnvironmentVariablesPage} from "../environment-variables/environment-variables";
+import {LoginPage} from "../login/login";
 
 @Component({
   selector: 'page-home',
@@ -32,6 +33,11 @@ export class HomePage {
 
   goToEnvironmentVariablesPage() {
     this.navCtrl.push(EnvironmentVariablesPage)
+  }
+
+  goToLogin() {
+    console.log('sfsdf');
+    this.navCtrl.push(LoginPage);
   }
 
 }

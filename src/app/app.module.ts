@@ -7,6 +7,12 @@ import {SQLite} from '@ionic-native/sqlite';
 import {Toast} from '@ionic-native/toast';
 import {IonicStorageModule} from '@ionic/storage';
 
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {ENV} from '@app/env';
+import {NgxErrorsModule} from '@ultimate/ngxerrors';
+
+import {LoginPage} from '../pages/login/login';
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
 import {SamplePage01Page} from "../pages/sample-page01/sample-page01";
@@ -15,9 +21,12 @@ import {Sample02Page} from "../pages/sample02/sample02";
 import {ExpenseNewDataPage} from "../pages/expense-new-data/expense-new-data";
 import {ExpenseEditDataPage} from "../pages/expense-edit-data/expense-edit-data";
 import {EnvironmentVariablesPage} from "../pages/environment-variables/environment-variables";
+import {AuthService} from '../services/auth.service';
+import { SignupPage } from '../pages/signup/signup';
 
 @NgModule({
   declarations: [
+    LoginPage,
     MyApp,
     HomePage,
     SamplePage01Page,
@@ -25,15 +34,19 @@ import {EnvironmentVariablesPage} from "../pages/environment-variables/environme
     Sample02Page,
     ExpenseNewDataPage,
     ExpenseEditDataPage,
-    EnvironmentVariablesPage
+    EnvironmentVariablesPage,
+    SignupPage
   ],
   imports: [
+    AngularFireModule.initializeApp(ENV.firebaseConfig),
     BrowserModule,
+    NgxErrorsModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    LoginPage,
     MyApp,
     HomePage,
     SamplePage01Page,
@@ -41,9 +54,12 @@ import {EnvironmentVariablesPage} from "../pages/environment-variables/environme
     Sample02Page,
     ExpenseNewDataPage,
     ExpenseEditDataPage,
-    EnvironmentVariablesPage
+    EnvironmentVariablesPage,
+    SignupPage
   ],
   providers: [
+    AngularFireAuth,
+    AuthService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

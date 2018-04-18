@@ -19,7 +19,7 @@ export class EnvironmentVariablesPage {
   env = ENV;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.dir(this.env)
+
   }
 
   ionViewDidLoad() {
