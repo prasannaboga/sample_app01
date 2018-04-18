@@ -22,7 +22,7 @@ import {ExpenseNewDataPage} from "../pages/expense-new-data/expense-new-data";
 import {ExpenseEditDataPage} from "../pages/expense-edit-data/expense-edit-data";
 import {EnvironmentVariablesPage} from "../pages/environment-variables/environment-variables";
 import {AuthService} from '../services/auth.service';
-import { SignupPage } from '../pages/signup/signup';
+import {SignupPage} from '../pages/signup/signup';
 
 @NgModule({
   declarations: [

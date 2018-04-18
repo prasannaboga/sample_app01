@@ -6,16 +6,16 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <button ion-item (click)="openPage(homePage)">
-        Home
+      <ion-list-header *ngIf="authService.getEmail()">{{authService.getEmail()}}</ion-list-header>
+      <button ion-item (click)="login()" *ngIf="!authService.authenticated">
+        <ion-icon name="log-in" item-left></ion-icon>
+        Log in
       </button>
-      <button ion-item (click)="openPage(friendsPage)">
-        Friends
+      <button ion-item (click)="logout()" *ngIf="authService.authenticated">
+        <ion-icon name="log-out" item-left></ion-icon>
+        Log out
       </button>
-      <button ion-item (click)="openPage(eventsPage)">
-        Events
-      </button>
-      <button ion-item (click)="closeMenu()">
+      <button ion-item (click)="closeMenu()" hidden>
         Close Menu
       </button>
     </ion-list>
