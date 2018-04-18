@@ -45,7 +45,7 @@ export class LoginPage {
         (res) => {
           console.log(JSON.stringify(res, null));
           let alert = this.alertCtrl.create({
-            subTitle: 'Login Successfull.',
+            subTitle: 'Login Successful.',
             buttons: [{
               text: 'Ok',
               handler: data => {
@@ -63,5 +63,25 @@ export class LoginPage {
 
   signup() {
     this.navCtrl.push(SignupPage);
+  }
+
+  loginWithGoogle() {
+    this.auth.signInWithGoogle()
+      .then(
+        (res) => {
+          console.log(JSON.stringify(res, null));
+          let alert = this.alertCtrl.create({
+            subTitle: 'Login Successful.',
+            buttons: [{
+              text: 'Ok',
+              handler: data => {
+                this.navCtrl.setRoot(HomePage);
+              }
+            }]
+          });
+          alert.present();
+        },
+        error => console.log(error.message)
+      );
   }
 }

@@ -6,6 +6,7 @@ import {SampleComponets01Page} from "../sample-componets01/sample-componets01";
 import {ENV} from '@app/env';
 import {EnvironmentVariablesPage} from "../environment-variables/environment-variables";
 import {LoginPage} from "../login/login";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'page-home',
@@ -14,7 +15,10 @@ import {LoginPage} from "../login/login";
 export class HomePage {
   env = ENV;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+              public authService: AuthService) {
+    console.log('----')
+    console.log(authService.authenticated)
 
   }
 
@@ -36,8 +40,11 @@ export class HomePage {
   }
 
   goToLogin() {
-    console.log('sfsdf');
     this.navCtrl.push(LoginPage);
+  }
+
+  goToProfile(){
+    alert('Go To Profile');
   }
 
 }

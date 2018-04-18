@@ -14,7 +14,8 @@
   <button ion-button (click)="goToSamplePage02()">Go To Sample Page 02</button>
   <button ion-button (click)="goToSampleComponets01Page()">Go To Sample Componets 01</button>
   <button ion-button (click)="goToEnvironmentVariablesPage()">Go To Environment Variables</button>
-  <button ion-button (click)="goToLogin()">Go To Login</button>
+  <button ion-button (click)="goToLogin()" *ngIf="!authService.authenticated">Go To Login</button>
+  <button ion-button (click)="goToProfile()" *ngIf="authService.authenticated">Go To Profile</button>
 
   <hr>
   {{ env | json }}
